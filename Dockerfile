@@ -30,7 +30,7 @@ RUN su - node -c "reaction init"
 
 RUN su - node -c "cd reaction && reaction &"
 
-EXPOSE "80:80"
+EXPOSE "80:3000"
 
 CMD ["su", "-", "node", "-c", "/bin/bash"]
 
