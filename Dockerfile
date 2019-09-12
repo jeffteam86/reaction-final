@@ -24,9 +24,9 @@ RUN echo "node ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/user &&  chmod 0440 /et
 
 #RUN USER node 
 
-RUN su - node -c "mkdir /home/node/reaction-project && cd /home/node/reaction-project"
+#RUN su - node -c "mkdir /home/node/reaction-project && cd /home/node/reaction-project"
 
-RUN su - node -c "reaction init && cd /home/node/reaction-project/reaction && reaction"
+RUN su - node -c "reaction init && cd reaction && reaction"
 
 EXPOSE "80:3000"
 
