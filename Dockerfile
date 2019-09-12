@@ -20,15 +20,15 @@ RUN curl https://install.meteor.com/ | sh
 
 RUN npm install -g reaction-cli
 
+RUN echo "user ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/user &&  chmod 0440 /etc/sudoers.d/user
+
 RUN USER node 
 
-RUN mkdir /home/$USER/reaction-project  
+RUN su - node -c "mkdir /home/node/reaction-project && cd /home/node/reaction-project"
 
-WORKDIR /home/$USER/reaction-project
+RUN su - node -c reaction init
 
-RUN reaction init
-
-WORKDIR home/$USER/reaction-project/reaction
+WORKDIR home/home/reaction-project/reaction
 
 RUN reaction
 
