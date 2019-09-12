@@ -32,6 +32,10 @@ RUN su - node -c "reaction init"
 
 RUN su - node -c "sed -i -e 's/3000:3000/80:3000/g' reaction/docker-compose.yml"
 
+COPY .docker-compose-custom.yml /home/node/reaction/docker-compose.yml
+
+RUN chown node: /home/node/reaction/docker-compose.yml
+
 RUN su - node -c "cd reaction && reaction &"
 
 EXPOSE "80:3000"
