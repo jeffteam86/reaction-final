@@ -5,4 +5,4 @@ deployments:
         vm_size:
           2GB
         port_forwarding:
-          80:3000
+          3000:3000
