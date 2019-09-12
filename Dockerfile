@@ -34,6 +34,8 @@ RUN su - node -c "sed -i -e 's/localhost:3000/master-gidyx.squash.io/g' reaction
 
 RUN su - node -c "sed -i -e 's/3000/80/g' reaction/propel.yaml"
 
+RUN su - node -c "sed -i -e 's/localhost:3000/master-gidyx.squash.io/g' reaction/.env"
+
 #COPY .docker-compose-custom.yml /home/node/reaction/docker-compose.yml
 
 #RUN chown node: /home/node/reaction/docker-compose.yml
