@@ -20,7 +20,17 @@ RUN curl https://install.meteor.com/ | sh
 
 RUN npm install -g reaction-cli
 
-RUN su node && mkdir /home/node/reaction-project && cd /home/node/reaction-project && reaction init && cd reaction && reaction
+RUN USER node 
+
+RUN mkdir /home/$USER/reaction-project  
+
+WORKDIR /home/$USER/reaction-project
+
+RUN reaction init
+
+WORKDIR home/$USER/reaction-project/reaction
+
+RUN reaction
 
 EXPOSE "80:3000"
 
