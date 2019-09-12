@@ -11,4 +11,3 @@ services:
     #command: su - node -c "reaction init && cd reaction && reaction"
     ports:
       - "3000:3000"
-~
