@@ -26,9 +26,11 @@ RUN echo "node ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/user &&  chmod 0440 /et
 
 #RUN su - node -c "mkdir /home/node/reaction-project && cd /home/node/reaction-project"
 
-RUN su - node -c "reaction init && cd reaction && reaction &"
+RUN su - node -c "reaction init"
 
-EXPOSE "80:3000"
+RUN su - node -c "cd reaction && reaction &"
+
+EXPOSE "80:80"
 
 CMD ["su", "-", "node", "-c", "/bin/bash"]
 
