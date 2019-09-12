@@ -10,13 +10,13 @@ RUN apt-get install -y nodejs
 
 RUN apt-get install gcc g++ make -y
 
-curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+RUN curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
-sudo apt-get update && sudo apt-get install yarn
+RUN sudo apt-get update && sudo apt-get install yarn
 
-curl https://install.meteor.com/ | sh
+RUN curl https://install.meteor.com/ | sh
 
 RUN npm install -g reaction-cli
 
