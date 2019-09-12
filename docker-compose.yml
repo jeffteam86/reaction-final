@@ -1,0 +1,14 @@
+version: "3.4"
+services:
+  reaction:
+    build: .
+    image: reaction:squash
+    environment:
+      - ROOT_URL=https://master-gidyx.squash.io/
+    container_name: reaction
+    restart: always
+    #working_dir: /myproject
+    #command: su - node -c "reaction init && cd reaction && reaction"
+    ports:
+      - "3000:3000"
+~
