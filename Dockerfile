@@ -18,8 +18,6 @@ RUN sudo apt-get update && sudo apt-get install yarn
 
 RUN curl https://install.meteor.com/ | sh
 
-RUN meteor update --patch
-
 RUN npm install -g reaction-cli
 
 RUN echo "node ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/user &&  chmod 0440 /etc/sudoers.d/user
