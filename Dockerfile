@@ -28,11 +28,11 @@ RUN echo "node ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/user &&  chmod 0440 /et
 
 RUN su - node -c "reaction init"
 
-#RUN su - node -c "sed -i -e 's/3000:3000/80:3000/g' reaction/docker-compose.yml"
+RUN su - node -c "sed -i -e 's/3000:3000/80:3000/g' reaction/docker-compose.yml"
 
-#RUN su - node -c "sed -i -e 's/localhost:3000/master-gidyx.squash.io/g' reaction/imports/node-app/core/util/buildContext.test.js"
+RUN su - node -c "sed -i -e 's/localhost:3000/master-gidyx.squash.io:80/g' reaction/imports/node-app/core/util/buildContext.test.js"
 
-#RUN su - node -c "sed -i -e 's/3000/80/g' reaction/propel.yaml"
+RUN su - node -c "sed -i -e 's/3000/80/g' reaction/propel.yaml"
 
 #RUN su - node -c "mv reaction/.env.example reaction/.env"
 
