@@ -1,19 +1,8 @@
 deployments:
   default:
-  dockerimage: reactioncommerce/reaction
-  port_forwarding: 80:3000
-  build_steps:
-    - apt-get update && apt-get install -y --no-install-recommends build-essential bzip2 curl wget ca-certificates git python nodejs npm
-    - wget -O /tmp/install_meteor.sh https://install.meteor.com && sh /tmp/install_meteor.sh
-    - npm install -g reaction-cli
-    - mkdir /reaction && chown node:node /reaction
-    - cd /reaction
-    - USER node
-    - reaction init
-    - cd /reaction/reaction
-  launch_steps:
-    - cd /reaction/reaction
-    - chown -R $USER:$(id -gn $USER) /home/node/.config
-    - reaction run
-  environment:
-    - ROOT_URL=https://master-gidyx.squash.io/
+        filename:
+          ./Dockerfile
+        vm_size:
+          2GB
+        port_forwarding:
+          80:3000
