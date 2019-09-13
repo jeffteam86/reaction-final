@@ -7,7 +7,7 @@ services:
     - "80:3000"
     environment:
       MONGO_URL: mongodb://mongo:27017
-      ROOT_URL: http://167.86.96.193
+      ROOT_URL: https://master-gidyx.squash.io/
     depends_on:
     - mongo
     networks:
