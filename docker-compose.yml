@@ -20,6 +20,5 @@ services:
     networks:
       - default
 
-
 networks:
     default:
